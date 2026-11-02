@@ -14,6 +14,10 @@ target_link_libraries(search_disk_index_fa ${PROJECT_NAME})
 add_executable(search_disk_index_yfcc search_disk_index_yfcc.cpp)
 target_link_libraries(search_disk_index_yfcc ${PROJECT_NAME})
 
+add_executable(test_tunnel_pool_merge test_tunnel_pool_merge.cpp)
+enable_testing()
+add_test(NAME tunnel_pool_merge COMMAND test_tunnel_pool_merge)
+
 # In-memory Vamana search with post-filter (ideal baseline)
 add_executable(search_mem_fa search_mem_fa.cpp)
 target_link_libraries(search_mem_fa ${PROJECT_NAME})

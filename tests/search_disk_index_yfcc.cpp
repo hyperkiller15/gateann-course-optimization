@@ -288,6 +288,20 @@ int run(int argc, char **argv) {
               << std::setw(12) << std::fixed << std::setprecision(0) << mean_bd_tunnel
               << std::setw(12) << std::fixed << std::setprecision(0) << mean_bd_process
               << std::endl;
+    // Extra measurements for the paired course benchmark. Both builds use this
+    // output code; query timing above excludes formatting and result dumping.
+    std::cout << "COURSE_METRICS {\"L\":" << L
+              << ",\"qps\":" << std::setprecision(9) << qps
+              << ",\"recall_percent\":" << recall * 100.0
+              << ",\"mean_ios\":" << mean_ios
+              << ",\"filter_skips\":" << mean_filter_skip
+              << ",\"io_time_us\":" << mean_bd_io
+              << ",\"tunnel_time_us\":" << mean_bd_tunnel
+              << ",\"process_time_us\":" << mean_bd_process << "}" << std::endl;
+    if (const char *prefix = std::getenv("GATEANN_RESULT_DUMP_PREFIX")) {
+      pipeann::save_bin(std::string(prefix) + ".L" + std::to_string(L) + ".ids.u32bin",
+                        res_buf.data(), query_num, recall_at);
+    }
   }
 
   delete[] query;

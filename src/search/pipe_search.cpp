@@ -15,6 +15,9 @@
 #include "utils/tsl/robin_set.h"
 #include "utils.h"
 #include "utils/page_cache.h"
+#ifdef GATEANN_TUNNEL_BATCH_MERGE
+#include "utils/tunnel_pool_merge.h"
+#endif
 
 #include <unistd.h>
 #include <sys/syscall.h>
@@ -82,6 +85,11 @@ namespace pipeann {
     std::vector<Neighbor> retset(mem_L + this->params.R + effective_lsearch * 10);
     auto &visited = *(query_buf->visited);
     unsigned cur_list_size = 0;
+#ifdef GATEANN_TUNNEL_BATCH_MERGE
+    // Allocate once per query, not once per filtered-out node.
+    std::vector<Neighbor> tunnel_merge_scratch(effective_lsearch);
+    Neighbor tunnel_incoming[MAX_N_EDGES];
+#endif
 
     std::vector<Neighbor> full_retset;
     full_retset.reserve(l_search * 10);
@@ -319,13 +327,24 @@ namespace pipeann {
               uint32_t temp_nbrs[MAX_N_EDGES];
               unsigned cnt = 0;
               for (unsigned m = 0; m < nnbrs; m++) {
+#ifdef GATEANN_TUNNEL_BATCH_MERGE
+                if (visited.insert(nbrs[m]).second) {
+                  temp_nbrs[cnt++] = nbrs[m];
+                }
+#else
                 if (visited.find(nbrs[m]) == visited.end()) {
                   temp_nbrs[cnt++] = nbrs[m];
                   visited.insert(nbrs[m]);
                 }
+#endif
               }
               if (cnt > 0) {
                 nbr_handler->compute_dists(query_buf, temp_nbrs, cnt);
+#ifdef GATEANN_TUNNEL_BATCH_MERGE
+                insert_tunnel_batch(retset.data(), cur_list_size, effective_lsearch,
+                                    temp_nbrs, dist_scratch, cnt, marker,
+                                    tunnel_merge_scratch.data(), tunnel_incoming);
+#else
                 for (unsigned m = 0; m < cnt; m++) {
                   float d = dist_scratch[m];
                   if (cur_list_size < effective_lsearch ||
@@ -336,6 +355,7 @@ namespace pipeann {
                     if (r < marker) marker = r;  // rescan if inserted before marker
                   }
                 }
+#endif
               }
             }
             if (stats != nullptr) {
