@@ -17,17 +17,21 @@ int main() {
       std::vector<pipeann::Neighbor> scalar(limit + 1), batch(limit + 1), scratch(limit), incoming(33);
       std::vector<uint32_t> ids(count);
       std::vector<float> dists(count);
+      std::vector<float> unique(initial + count);
+      for (unsigned i = 0; i < unique.size(); ++i) unique[i] = float(i) * 0.25f;
+      std::shuffle(unique.begin(), unique.end(), rng);
       bool ties = trial % 3 == 0;
       // Unique integers are represented exactly; shuffled candidates can land
       // before, within or beyond a partially/full populated pool.
       for (unsigned i = 0; i < initial; ++i) {
-        scalar[i] = pipeann::Neighbor(i, ties ? float(i / 3) : float(i * 37 + 10), bool(rng() % 2));
+        scalar[i] = pipeann::Neighbor(i, ties ? float(i / 3) : unique[i], bool(rng() % 2));
         scalar[i].visited = rng() % 2;
       }
+      std::sort(scalar.begin(), scalar.begin() + initial);
       batch = scalar;
       for (unsigned i = 0; i < count; ++i) {
         ids[i] = limit + 1 + i;
-        dists[i] = ties ? float(rng() % (limit + 5)) : float((i + 1) * 37 + 11);
+        dists[i] = ties ? float(rng() % (limit + 5)) : unique[initial + i];
       }
       std::shuffle(dists.begin(), dists.end(), rng);
       pipeann::insert_tunnel_scalar(scalar.data(), scalar_size, limit, ids.data(), dists.data(), count, scalar_marker);
