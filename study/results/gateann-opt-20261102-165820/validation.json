@@ -1,0 +1,9 @@
+{
+  "formal_rows": 30,
+  "pairs": 15,
+  "zero_recall_delta_pairs": 15,
+  "identical_returned_ids_pairs": 13,
+  "all_processes_exit_zero": true,
+  "candidate_pool_differential_cases": 21600,
+  "asan_ubsan": "pass"
+}

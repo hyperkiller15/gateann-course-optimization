@@ -1,0 +1,18 @@
+Consolidate compiler generated dependencies of target test_tunnel_pool_merge
+[ 50%] Building CXX object tests/CMakeFiles/test_tunnel_pool_merge.dir/test_tunnel_pool_merge.cpp.o
+[100%] Linking CXX executable test_tunnel_pool_merge
+[100%] Built target test_tunnel_pool_merge
+PASS 21600 differential candidate-pool cases
+Consolidate compiler generated dependencies of target test_tunnel_pool_merge
+[ 50%] Building CXX object tests/CMakeFiles/test_tunnel_pool_merge.dir/test_tunnel_pool_merge.cpp.o
+[100%] Linking CXX executable test_tunnel_pool_merge
+[100%] Built target test_tunnel_pool_merge
+PASS 21600 differential candidate-pool cases
+In file included from /usr/include/c++/11/cassert:44,
+                 from include/utils.h:4,
+                 from include/utils/tunnel_pool_merge.h:3,
+                 from tests/test_tunnel_pool_merge.cpp:1:
+include/utils.h: In function 'void pipeann::alloc_aligned(void**, size_t, size_t)':
+include/utils.h:118:12: error: 'IS_ALIGNED' was not declared in this scope
+  118 |     assert(IS_ALIGNED(size, align));
+      |            ^~~~~~~~~~

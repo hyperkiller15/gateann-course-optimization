@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/lab/optimization/gateann-course-optimization/build-baseline/tests/search_disk_index_yfcc",
+    "uint8",
+    "/lab/course_runs/indices/gateann/formal_1000000/yfcc",
+    "1",
+    "8",
+    "/lab/datasets/yfcc_course_v1/formal_1000000/workloads/high/query.u8bin",
+    "/lab/datasets/yfcc_course_v1/formal_1000000/base.metadata.spmat",
+    "/lab/datasets/yfcc_course_v1/formal_1000000/workloads/high/query.metadata.spmat",
+    "/lab/datasets/yfcc_course_v1/formal_1000000/workloads/high/ground_truth.ids.ibin",
+    "10",
+    "l2",
+    "pq",
+    "8",
+    "0",
+    "0",
+    "32",
+    "640"
+  ],
+  "exit_code": 0,
+  "environment_overrides": {
+    "OMP_NUM_THREADS": "1",
+    "OPENBLAS_NUM_THREADS": "1",
+    "GATEANN_RESULT_DUMP_PREFIX": "/lab/optimization/gateann-opt-20261102-165820/formal_1000000/high/L640/r2-baseline/results"
+  },
+  "elapsed_seconds": 0.6234460000000581
+}

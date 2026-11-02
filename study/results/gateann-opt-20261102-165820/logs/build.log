@@ -1,0 +1,116 @@
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Additional definitions: 
+-- Using AIO for asynchronous I/O, compatible but slower.
+-- Performing Test COMPILER_SUPPORTS_AVX512F
+-- Performing Test COMPILER_SUPPORTS_AVX512F - Success
+-- Performing Test COMPILER_SUPPORTS_AVX2
+-- Performing Test COMPILER_SUPPORTS_AVX2 - Success
+-- CPU supports AVX2
+-- Compiler and CPU supports -mavx2. Enabling AVX2.
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- Looking for sgemm_
+-- Looking for sgemm_ - not found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Looking for sgemm_
+-- Looking for sgemm_ - found
+-- Found BLAS: /usr/lib/x86_64-linux-gnu/libopenblas.so  
+-- BLAS found /usr/lib/x86_64-linux-gnu/libopenblas.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /lab/optimization/gateann-course-optimization/build-baseline
+[  6%] Building CXX object src/CMakeFiles/gateann.dir/search/beam_search.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/gateann.dir/index.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/gateann.dir/search/pipe_search.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/gateann.dir/ssd_index.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/gateann.dir/update/delete_merge.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/gateann.dir/update/direct_insert.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/gateann.dir/update/dynamic_index.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/gateann.dir/utils/distance.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/gateann.dir/utils/index_build_utils.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/gateann.dir/utils/kmeans_utils.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/gateann.dir/utils/linux_aligned_file_reader.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/gateann.dir/utils/partition.cpp.o
+[ 86%] Linking CXX static library libgateann.a
+[ 86%] Built target gateann
+[ 93%] Building CXX object tests/CMakeFiles/search_disk_index_yfcc.dir/search_disk_index_yfcc.cpp.o
+[100%] Linking CXX executable search_disk_index_yfcc
+[100%] Built target search_disk_index_yfcc
+[ 50%] Building CXX object tests/CMakeFiles/test_tunnel_pool_merge.dir/test_tunnel_pool_merge.cpp.o
+[100%] Linking CXX executable test_tunnel_pool_merge
+[100%] Built target test_tunnel_pool_merge
+PASS 21600 differential candidate-pool cases
+-- The C compiler identification is GNU 11.4.0
+-- The CXX compiler identification is GNU 11.4.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: /usr/bin/cc - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: /usr/bin/c++ - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
+Additional definitions: 
+-- Using AIO for asynchronous I/O, compatible but slower.
+-- Performing Test COMPILER_SUPPORTS_AVX512F
+-- Performing Test COMPILER_SUPPORTS_AVX512F - Success
+-- Performing Test COMPILER_SUPPORTS_AVX2
+-- Performing Test COMPILER_SUPPORTS_AVX2 - Success
+-- CPU supports AVX2
+-- Compiler and CPU supports -mavx2. Enabling AVX2.
+-- Found OpenMP_C: -fopenmp (found version "4.5") 
+-- Found OpenMP_CXX: -fopenmp (found version "4.5") 
+-- Found OpenMP: TRUE (found version "4.5")  
+-- Looking for sgemm_
+-- Looking for sgemm_ - not found
+-- Looking for pthread.h
+-- Looking for pthread.h - found
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD
+-- Performing Test CMAKE_HAVE_LIBC_PTHREAD - Success
+-- Found Threads: TRUE  
+-- Looking for sgemm_
+-- Looking for sgemm_ - found
+-- Found BLAS: /usr/lib/x86_64-linux-gnu/libopenblas.so  
+-- BLAS found /usr/lib/x86_64-linux-gnu/libopenblas.so
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /lab/optimization/gateann-course-optimization/build-optimized
+[  6%] Building CXX object src/CMakeFiles/gateann.dir/index.cpp.o
+[ 13%] Building CXX object src/CMakeFiles/gateann.dir/search/beam_search.cpp.o
+[ 20%] Building CXX object src/CMakeFiles/gateann.dir/search/pipe_search.cpp.o
+[ 26%] Building CXX object src/CMakeFiles/gateann.dir/ssd_index.cpp.o
+[ 33%] Building CXX object src/CMakeFiles/gateann.dir/update/delete_merge.cpp.o
+[ 40%] Building CXX object src/CMakeFiles/gateann.dir/update/direct_insert.cpp.o
+[ 46%] Building CXX object src/CMakeFiles/gateann.dir/update/dynamic_index.cpp.o
+[ 53%] Building CXX object src/CMakeFiles/gateann.dir/utils/distance.cpp.o
+[ 60%] Building CXX object src/CMakeFiles/gateann.dir/utils/index_build_utils.cpp.o
+[ 66%] Building CXX object src/CMakeFiles/gateann.dir/utils/kmeans_utils.cpp.o
+[ 73%] Building CXX object src/CMakeFiles/gateann.dir/utils/linux_aligned_file_reader.cpp.o
+[ 80%] Building CXX object src/CMakeFiles/gateann.dir/utils/partition.cpp.o
+[ 86%] Linking CXX static library libgateann.a
+[ 86%] Built target gateann
+[ 93%] Building CXX object tests/CMakeFiles/search_disk_index_yfcc.dir/search_disk_index_yfcc.cpp.o
+[100%] Linking CXX executable search_disk_index_yfcc
+[100%] Built target search_disk_index_yfcc
+[ 50%] Building CXX object tests/CMakeFiles/test_tunnel_pool_merge.dir/test_tunnel_pool_merge.cpp.o
+[100%] Linking CXX executable test_tunnel_pool_merge
+[100%] Built target test_tunnel_pool_merge
+PASS 21600 differential candidate-pool cases

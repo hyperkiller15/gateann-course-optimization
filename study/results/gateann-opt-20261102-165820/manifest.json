@@ -1,0 +1,43 @@
+{
+  "started_utc": "2026-11-02T08:58:20.420220+00:00",
+  "source_commit": "e0f137ebbb97049f70addb4d4c3228ee9f18ce8c",
+  "source_status": "",
+  "configs": [
+    [
+      "high",
+      160
+    ],
+    [
+      "high",
+      320
+    ],
+    [
+      "high",
+      640
+    ],
+    [
+      "medium",
+      320
+    ],
+    [
+      "low",
+      320
+    ]
+  ],
+  "repeats": 3,
+  "queries_per_process": 200,
+  "parameters": {
+    "threads": 1,
+    "beamwidth": 8,
+    "K": 10,
+    "mem_L": 0,
+    "cache_budget": 0,
+    "full_adj_neighbors": 32,
+    "backend": "aio"
+  },
+  "binary_sha256": {
+    "baseline": "c470a152c659c5d5e3b75bda5f3a7e35d42c8fc166ecbf8a7694169139b56459",
+    "optimized": "d2223fc64394e439e2e4a42c17b14a8336b82172a9c9ea248932b21b28cf79b5"
+  },
+  "cache_policy": "No cache purge; one warm-up per variant/config; opposite pair order in repeat 2."
+}

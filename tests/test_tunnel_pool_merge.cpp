@@ -21,7 +21,7 @@ int main() {
       for (unsigned i = 0; i < unique.size(); ++i) unique[i] = float(i) * 0.25f;
       std::shuffle(unique.begin(), unique.end(), rng);
       bool ties = trial % 3 == 0;
-      // Unique integers are represented exactly; shuffled candidates can land
+      // Binary-exact distances and shuffled candidates exercise insertions
       // before, within or beyond a partially/full populated pool.
       for (unsigned i = 0; i < initial; ++i) {
         scalar[i] = pipeann::Neighbor(i, ties ? float(i / 3) : unique[i], bool(rng() % 2));

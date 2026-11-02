@@ -1,0 +1,3 @@
+Dataset verification passed: /lab/datasets/yfcc_course_v1
+Manifest OK: /lab/course_runs/indices/gateann/formal_1000000/manifest.json
+Index verification passed: /lab/course_runs/indices/gateann/formal_1000000
